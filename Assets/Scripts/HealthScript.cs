@@ -39,7 +39,6 @@ public class HealthScript : MonoBehaviour {
         }
         healthBarImage.fillAmount = Mathf.Clamp(health / maxHealth, 0, 1f);
         
-        Debug.Log(healthBarHealthyColor);
         if (health > maxHealth * healthyAbove) {
             healthBarImage.color = healthBarHealthyColor;
         } else if (health > maxHealth * midAbove) {
@@ -63,5 +62,12 @@ public class HealthScript : MonoBehaviour {
 
     void Die() {
         Destroy(gameObject);
+        
+        var deathEffect = GetComponent<DeathEffect>();
+        if (deathEffect == null) {
+            return;
+        }
+        var hero = GameObject.Find("Hero");
+        deathEffect.PerformOn(hero);
     }
 }

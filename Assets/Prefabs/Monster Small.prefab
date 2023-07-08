@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1726483599145890022}
   - component: {fileID: 1726483599145890023}
   - component: {fileID: 1726483599145890021}
+  - component: {fileID: 562886804263143026}
   - component: {fileID: 1844784326104892553}
   m_Layer: 0
   m_Name: Monster Small
@@ -117,6 +118,8 @@ MonoBehaviour:
   maxHealth: 25
   healthBarPrefab: {fileID: 8247855366076164493, guid: aaabdf2f1aba0244eb211d6aa7098808, type: 3}
   team: 1
+  healthyAbove: 0.8
+  midAbove: 0.3
 --- !u!61 &1726483599145890023
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -164,6 +167,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &562886804263143026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1726483599145890019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 624d8cc1fbb56bf4eb3aed45537f2cfd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  romanceAmount: 10
 --- !u!114 &1844784326104892553
 MonoBehaviour:
   m_ObjectHideFlags: 0
