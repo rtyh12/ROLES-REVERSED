@@ -12,9 +12,6 @@ public class AttackScript : MonoBehaviour
 
     private List<GameObject> collidingObjects = new List<GameObject>();
 
-    public bool attacksPlayer;
-    public bool attacksEnemy;
-
     private HealthScript healthScript;  // team is stored in the health
 
     void Start()
