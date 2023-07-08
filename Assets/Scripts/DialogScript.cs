@@ -10,7 +10,8 @@ public class DialogScript : MonoBehaviour
 
     public TMP_Text Text;
     private string CurrentText; 
-
+    private string FullText = "You are the regional district manager of the local evil horde. Your boss wants you to deal with some pesty little heroes by sending the troops in their direction. It is a simple desk job. ";
+    
     //CanvasGroup Group;
     
     // Start is called before the first frame update
@@ -18,7 +19,7 @@ public class DialogScript : MonoBehaviour
     {
         //Group = GetComponent<CanvasGroup>();
         //Group.alpha = 0;        
-        Show("some text idk blububububu");
+        Show(FullText);
     }
 
    public void Show(string text)
@@ -26,6 +27,16 @@ public class DialogScript : MonoBehaviour
         //Group.alpha = 1;
         CurrentText = text;
         StartCoroutine(DisplayText());
+   }
+
+
+   //idk if i need this but maybe?
+   public void ReplaceText(string text)
+   {
+        StopAllCoroutines();
+        Text.text = "";
+        FullText = text;
+        Show(text);
    }
 
     public void Close()
@@ -48,5 +59,19 @@ public class DialogScript : MonoBehaviour
             yield return new WaitForSecondsRealtime(kMaxTextTime / TextSpeed);
         }
         yield return null;
+    }
+
+    void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {   
+            StopAllCoroutines();
+            Text.text = FullText;
+            Debug.Log("Pressed left-click.");
+        }
+        if (Input.GetMouseButtonDown(1))
+        {
+            Debug.Log("Pressed right-click.");
+        }
     }
 }
