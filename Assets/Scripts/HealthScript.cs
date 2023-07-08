@@ -1,6 +1,11 @@
 using UnityEngine;
 using UnityEngine.UI;
 
+public enum Team {
+    hero,
+    enemy,
+}
+
 public class HealthScript : MonoBehaviour
 {
     private float _health;
@@ -18,6 +23,8 @@ public class HealthScript : MonoBehaviour
     public GameObject healthBarPrefab;
     private Image healthBarImage;
     private GameObject healthBarCanvas;
+
+    public Team team;
 
     public void UpdateHealthBar(float health)
     {

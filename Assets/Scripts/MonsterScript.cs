@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class MonsterScript : MonoBehaviour
 {
-    public GameObject player;
-    public float step;
+    private GameObject hero;
+    public float speed;
+
+    void Start() {
+        hero = GameObject.Find("Hero");
+    }
 
     void FixedUpdate()
     {
-        transform.position -= (transform.position - player.transform.position).normalized * step;
+        transform.position -= (transform.position - hero.transform.position).normalized * speed * 0.01f;
     }
 }
