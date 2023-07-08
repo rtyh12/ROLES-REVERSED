@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 4153268508285029572}
   - component: {fileID: 4153268508285029573}
   - component: {fileID: 4153268508285029626}
+  - component: {fileID: 1507191294586615848}
   m_Layer: 0
   m_Name: Hero
   m_TagString: Damageable
@@ -130,8 +131,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseDamage: 10
   attackCooldown: 1
-  attacksPlayer: 0
-  attacksEnemy: 1
 --- !u!61 &4153268508285029573
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -157,7 +156,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0.1
+  m_EdgeRadius: 0.01
 --- !u!50 &4153268508285029626
 Rigidbody2D:
   serializedVersion: 4
@@ -179,3 +178,15 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &1507191294586615848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4153268508285029569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25fc14d305c3d6444b839c42b8a2b9a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

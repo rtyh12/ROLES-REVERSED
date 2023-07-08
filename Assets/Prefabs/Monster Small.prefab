@@ -178,5 +178,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseDamage: 1
   attackCooldown: 0.25
-  attacksPlayer: 1
-  attacksEnemy: 0
