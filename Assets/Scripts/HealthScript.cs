@@ -6,14 +6,11 @@ public enum Team {
     enemy,
 }
 
-public class HealthScript : MonoBehaviour
-{
+public class HealthScript : MonoBehaviour {
     private float _health;
-    public float health
-    {
+    public float health {
         get { return _health; }
-        set
-        {
+        set {
             _health = value;
             UpdateHealthBar(_health);
         }
@@ -26,18 +23,15 @@ public class HealthScript : MonoBehaviour
 
     public Team team;
 
-    public void UpdateHealthBar(float health)
-    {
-        if (healthBarImage == null)
-        {
+    public void UpdateHealthBar(float health) {
+        if (healthBarImage == null) {
             return;
         }
         healthBarImage.fillAmount = Mathf.Clamp(health / maxHealth, 0, 1f);
         healthBarCanvas.SetActive(health < maxHealth - 0.01);
     }
 
-    void Start()
-    {
+    void Start() {
         healthBarCanvas = Instantiate(healthBarPrefab, transform.position, Quaternion.identity);
         healthBarCanvas.transform.SetParent(this.transform);
         healthBarImage = healthBarCanvas.transform
@@ -47,16 +41,13 @@ public class HealthScript : MonoBehaviour
         health = maxHealth;
     }
 
-    void Update()
-    {
-        if (health <= 0)
-        {
+    void Update() {
+        if (health <= 0) {
             Die();
         }
     }
 
-    void Die()
-    {
+    void Die() {
         Destroy(gameObject);
     }
 }
