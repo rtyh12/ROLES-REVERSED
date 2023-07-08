@@ -12,6 +12,9 @@ public class HealthScript : MonoBehaviour {
         get { return _health; }
         set {
             _health = value;
+            if (health <= 0) {
+                Die();
+            }
             UpdateHealthBar(_health);
         }
     }
@@ -23,12 +26,29 @@ public class HealthScript : MonoBehaviour {
 
     public Team team;
 
+    private Color healthBarHealthyColor = new Color(255f / 255f, 195f / 255f, 174f / 255f);
+    private Color healthBarMidColor = new Color(214f / 255f, 118f / 255f, 118f / 255f);
+    private Color healthBarDyingColor = new Color(147f / 255f, 51f / 255f, 94f / 255f);
+
+    public float healthyAbove = 0.8f;
+    public float midAbove = 0.3f;
+
     public void UpdateHealthBar(float health) {
         if (healthBarImage == null) {
             return;
         }
         healthBarImage.fillAmount = Mathf.Clamp(health / maxHealth, 0, 1f);
-        healthBarCanvas.SetActive(health < maxHealth - 0.01);
+        
+        Debug.Log(healthBarHealthyColor);
+        if (health > maxHealth * healthyAbove) {
+            healthBarImage.color = healthBarHealthyColor;
+        } else if (health > maxHealth * midAbove) {
+            healthBarImage.color = healthBarMidColor;
+        } else {
+            healthBarImage.color = healthBarDyingColor;
+        }
+        
+        healthBarCanvas.SetActive(health < maxHealth - 0.01f);
     }
 
     void Start() {
@@ -39,12 +59,6 @@ public class HealthScript : MonoBehaviour {
                         .GetChild(0).gameObject
                         .GetComponent<Image>();
         health = maxHealth;
-    }
-
-    void Update() {
-        if (health <= 0) {
-            Die();
-        }
     }
 
     void Die() {
