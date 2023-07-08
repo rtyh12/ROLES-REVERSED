@@ -12,9 +12,10 @@ public class HealthScript : MonoBehaviour {
         get { return _health; }
         set {
             _health = value;
-            if (health <= 0) {
+            if (_health <= 0) {
                 Die();
             }
+            _health = Mathf.Min(_health, maxHealth);
             UpdateHealthBar(_health);
         }
     }
@@ -62,8 +63,8 @@ public class HealthScript : MonoBehaviour {
 
     void Die() {
         Destroy(gameObject);
-        
-        var deathEffect = GetComponent<DeathEffect>();
+
+        var deathEffect = GetComponent<IDeathEffect>();
         if (deathEffect == null) {
             return;
         }
