@@ -14,7 +14,7 @@ public class HealthScript : MonoBehaviour
         }
     }
     public float maxHealth;
-    
+
     public GameObject healthBarPrefab;
     private Image healthBarImage;
     private GameObject healthBarCanvas;
@@ -42,7 +42,7 @@ public class HealthScript : MonoBehaviour
 
     void Update()
     {
-        if (health < 0)
+        if (health <= 0)
         {
             Die();
         }
