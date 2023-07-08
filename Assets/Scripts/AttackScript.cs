@@ -1,9 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+
 using UnityEngine;
 
-public class AttackScript : MonoBehaviour
-{
+public class AttackScript : MonoBehaviour {
     public float baseDamage;
     private BoxCollider2D boxCollider;
 
@@ -14,28 +14,23 @@ public class AttackScript : MonoBehaviour
 
     private HealthScript healthScript;  // team is stored in the health
 
-    void Start()
-    {
+    void Start() {
         boxCollider = gameObject.GetComponent<BoxCollider2D>();
         healthScript = gameObject.GetComponent<HealthScript>();
     }
 
-    void OnCollisionEnter2D(Collision2D col)
-    {
+    void OnCollisionEnter2D(Collision2D col) {
         collidingObjects.Add(col.gameObject);
     }
 
-    void OnCollisionExit2D(Collision2D col)
-    {
+    void OnCollisionExit2D(Collision2D col) {
         collidingObjects.Remove(col.gameObject);
     }
 
-    void Update()
-    {
+    void Update() {
         timeUntilAttack -= Time.deltaTime;
 
-        if (collidingObjects.Count == 0)
-        {
+        if (collidingObjects.Count == 0) {
             return;
         }
 
@@ -44,25 +39,21 @@ public class AttackScript : MonoBehaviour
 
         Team? thisTeam = this.GetComponent<HealthScript>()?.team;
         Team? otherTeam = other.GetComponent<HealthScript>()?.team;
-        if (thisTeam == null || otherTeam == null)
-        {
+        if (thisTeam == null || otherTeam == null) {
             return;
         }
 
         if (other.tag == "Damageable"
             && timeUntilAttack <= 0
-            && otherTeam != thisTeam)
-        {
+            && otherTeam != thisTeam) {
             timeUntilAttack = attackCooldown;
             Damage(other);
         }
     }
 
-    void Damage(GameObject contactingObject)
-    {
+    void Damage(GameObject contactingObject) {
         HealthScript healthScript = contactingObject.GetComponent<HealthScript>();
-        if (healthScript == null)
-        {
+        if (healthScript == null) {
             return;
         }
 

@@ -142,7 +142,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0.1
+  m_EdgeRadius: 0.01
 --- !u!50 &1726483599145890021
 Rigidbody2D:
   serializedVersion: 4
@@ -178,5 +178,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseDamage: 5
   attackCooldown: 0.8
-  attacksPlayer: 1
-  attacksEnemy: 0

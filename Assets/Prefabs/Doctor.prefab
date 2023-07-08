@@ -14,11 +14,10 @@ GameObject:
   - component: {fileID: 1726483599145890022}
   - component: {fileID: 1726483599145890023}
   - component: {fileID: 1726483599145890021}
-  - component: {fileID: 5185671177384502458}
   - component: {fileID: 562886804263143026}
   - component: {fileID: 1844784326104892553}
   m_Layer: 0
-  m_Name: Monster Small
+  m_Name: Doctor
   m_TagString: Damageable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -81,7 +80,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 0.17026219, b: 0, a: 1}
+  m_Color: {r: 0.3257776, g: 0.4339623, b: 0.26883826, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -168,19 +167,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &5185671177384502458
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1726483599145890019}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18c729f4f9d68648b287abacc24f4b1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  xpDropped: 25
 --- !u!114 &562886804263143026
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -193,7 +179,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 624d8cc1fbb56bf4eb3aed45537f2cfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  romanceDropped: 10
+  romanceAmount: 10
 --- !u!114 &1844784326104892553
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -206,5 +192,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2850973a6ad5dfa449966ab0b5bb7acc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseDamage: 1
-  attackCooldown: 0.25
+  baseDamage: -0.1
+  attackCooldown: 0.01
