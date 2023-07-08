@@ -13,10 +13,12 @@ public class AttackScript : MonoBehaviour {
     private List<GameObject> collidingObjects = new List<GameObject>();
 
     private HealthScript healthScript;  // team is stored in the health
+    private Animator animator;
 
     void Start() {
-        boxCollider = gameObject.GetComponent<BoxCollider2D>();
-        healthScript = gameObject.GetComponent<HealthScript>();
+        boxCollider = GetComponent<BoxCollider2D>();
+        animator = GetComponent<Animator>();
+        healthScript = GetComponent<HealthScript>();
     }
 
     void OnCollisionEnter2D(Collision2D col) {
@@ -27,7 +29,7 @@ public class AttackScript : MonoBehaviour {
         collidingObjects.Remove(col.gameObject);
     }
 
-    void Update() {
+    void FixedUpdate() {
         timeUntilAttack -= Time.deltaTime;
 
         if (collidingObjects.Count == 0) {
@@ -37,16 +39,18 @@ public class AttackScript : MonoBehaviour {
         int randomIndex = Random.Range(0, collidingObjects.Count);
         GameObject other = collidingObjects[randomIndex];
 
-        Team? thisTeam = this.GetComponent<HealthScript>()?.team;
-        Team? otherTeam = other.GetComponent<HealthScript>()?.team;
-        if (thisTeam == null || otherTeam == null) {
+        Team? myTeam = this.GetComponent<HealthScript>()?.team;
+        Team? theirTeam = other.GetComponent<HealthScript>()?.team;
+        if (myTeam == null || theirTeam == null) {
             return;
         }
 
-        if (other.tag == "Damageable"
-            && timeUntilAttack <= 0
-            && otherTeam != thisTeam) {
+        if (other.tag == "Damageable" && timeUntilAttack <= 0 && myTeam != theirTeam) {
             timeUntilAttack = attackCooldown;
+
+            if (animator != null) {
+                animator.SetTrigger("Attack");
+            }
             Damage(other);
         }
     }
