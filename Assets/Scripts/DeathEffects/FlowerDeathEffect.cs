@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class FlowerDeathEffect : MonoBehaviour, IDeathEffect {
-    public float romanceAmount = 10;
+    public float romanceDropped = 10;
     
     public void PerformOn(GameObject hero) {
-        hero.GetComponent<HeroScript>().romance += romanceAmount;
+        hero.GetComponent<HeroScript>().romance += romanceDropped;
     }
 }

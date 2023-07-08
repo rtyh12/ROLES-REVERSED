@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4153268508285029627}
   - component: {fileID: 4153268508285029572}
   - component: {fileID: 4153268508285029573}
+  - component: {fileID: 6686618729474966337}
   - component: {fileID: 4153268508285029626}
   m_Layer: 0
   m_Name: Hero
@@ -103,9 +104,6 @@ MonoBehaviour:
   maxHealth: 100
   healthBarPrefab: {fileID: 8247855366076164493, guid: aaabdf2f1aba0244eb211d6aa7098808, type: 3}
   team: 0
-  healthBarHealthyColor: {r: 1, g: 0.29874206, b: 0.29874206, a: 1}
-  healthBarMidColor: {r: 0, g: 0, b: 0, a: 1}
-  healthBarDyingColor: {r: 1, g: 0, b: 0, a: 1}
   healthyAbove: 0.8
   midAbove: 0.3
 --- !u!114 &4153268508285029572
@@ -148,6 +146,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0.01
+--- !u!114 &6686618729474966337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4153268508285029569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18c729f4f9d68648b287abacc24f4b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xpDropped: 25
 --- !u!50 &4153268508285029626
 Rigidbody2D:
   serializedVersion: 4
