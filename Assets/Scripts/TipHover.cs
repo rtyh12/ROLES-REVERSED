@@ -1,10 +1,10 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class TipHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler {
     public string tipToShow;
+    
     private float timeToWait = 0.5f;
     public void OnPointerEnter(PointerEventData eventData) {
         StopAllCoroutines();
