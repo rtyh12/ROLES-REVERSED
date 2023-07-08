@@ -3,6 +3,6 @@ using System.Collections.Generic;
 
 using UnityEngine;
 
-public interface DeathEffect {
+public interface IDeathEffect {
     void PerformOn(GameObject hero);
 }
