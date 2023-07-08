@@ -66,7 +66,7 @@ public class DialogScript : MonoBehaviour
         yield return null;
     }
 
-    void Update()
+    /*void Update()
     {   
         if (Input.GetMouseButtonDown(0))
         {   
@@ -86,5 +86,5 @@ public class DialogScript : MonoBehaviour
         } else if (Text.text == secondText){
             ReplaceText(thirdText);
         }
-    }
+    }*/
 }
