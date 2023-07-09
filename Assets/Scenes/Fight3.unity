@@ -157,31 +157,31 @@ MonoBehaviour:
   - type: 0
     sprite: {fileID: 21300000, guid: 692e81e837fbe7b489fc7502b131acda, type: 3}
     prefab: {fileID: 1726483599145890019, guid: 826d06e8eca158140997835825931854, type: 3}
-    description: Basic\nHP 50 | Attack 10
+    description: Basic | 50 HP | 10 Attack
   - type: 1
     sprite: {fileID: 21300000, guid: ebd013d667078af429b7fc4950954562, type: 3}
     prefab: {fileID: 1726483599145890019, guid: 3ec4c52b1a385674894ad25a1093f237, type: 3}
-    description: Stronger\nHP 200 | Attack 50
+    description: Stronger | 200 HP | 50 Attack
   - type: 2
     sprite: {fileID: 21300000, guid: 9f533d02b012dd64db131f7abc7fac49, type: 3}
     prefab: {fileID: 1726483599145890019, guid: 7268875130154f04991fb2ef2ad8e6d8, type: 3}
-    description: Banona\nHP 100 | Attack 5\nFood +100
+    description: Banona | 100 HP | 5 Attack | +100 Food
   - type: 3
     sprite: {fileID: 21300000, guid: 3966340a99dde1d43b5526c35151dc00, type: 3}
     prefab: {fileID: 1726483599145890019, guid: 82576838a1bc2dd4cb63bae3c8c457f6, type: 3}
-    description: Doctor\nHP 200 | Attack -10
+    description: Doctor | 200 HP | +10 Healing
   - type: 4
     sprite: {fileID: 21300000, guid: 44d55c2a19703f243accb876bfaef191, type: 3}
     prefab: {fileID: 1726483599145890019, guid: 384374783bd09964bb3bc9e54845840f, type: 3}
-    description: Dog\nHP 150 | Attack 8
+    description: Dog | 150 HP | 8 Attack
   - type: 5
     sprite: {fileID: 21300000, guid: 9fbeb2a6a62355643a236b38fdcb4d50, type: 3}
     prefab: {fileID: 1726483599145890019, guid: b2f6c0cd18332d94a87add9c5e711d00, type: 3}
-    description: Flowers\nHP 200 | Attack 75\nRomance +100
+    description: Flowers | 200 HP | 75 Attack | +100 Romance
   - type: 6
     sprite: {fileID: 21300000, guid: 0aacd06cb3e94fd41b48c092e13f5218, type: 3}
     prefab: {fileID: 1726483599145890019, guid: 37fbaf3a6573b184493cebba2faa074e, type: 3}
-    description: STRONKDUCK\nHP 200 | Attack 100
+    description: STRONKDUCK | 200 HP | 100 Attack
   - type: 7
     sprite: {fileID: 21300000, guid: e0f0c44d60a6cd442841b674510602a2, type: 3}
     prefab: {fileID: 0}
@@ -3057,11 +3057,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4153268508285029574, guid: b922cb7cdf196a74c95c533476221e24, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.79
+      value: -6.12
       objectReference: {fileID: 0}
     - target: {fileID: 4153268508285029574, guid: b922cb7cdf196a74c95c533476221e24, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.23
+      value: -1.14
       objectReference: {fileID: 0}
     - target: {fileID: 4153268508285029574, guid: b922cb7cdf196a74c95c533476221e24, type: 3}
       propertyPath: m_LocalPosition.z
