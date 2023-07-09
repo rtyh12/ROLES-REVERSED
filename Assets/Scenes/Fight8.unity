@@ -156,7 +156,7 @@ MonoBehaviour:
   monsterData:
   - type: 0
     sprite: {fileID: 21300000, guid: 692e81e837fbe7b489fc7502b131acda, type: 3}
-    prefab: {fileID: 1726483599145890019, guid: 42ad30bd8031c4a4dbdb7b8c4ede1464, type: 3}
+    prefab: {fileID: 1726483599145890019, guid: 826d06e8eca158140997835825931854, type: 3}
     description: basic
   - type: 1
     sprite: {fileID: 21300000, guid: ebd013d667078af429b7fc4950954562, type: 3}
@@ -164,23 +164,23 @@ MonoBehaviour:
     description: strong
   - type: 2
     sprite: {fileID: 21300000, guid: 9f533d02b012dd64db131f7abc7fac49, type: 3}
-    prefab: {fileID: 0}
+    prefab: {fileID: 1726483599145890019, guid: 7268875130154f04991fb2ef2ad8e6d8, type: 3}
     description: bonano
   - type: 3
     sprite: {fileID: 21300000, guid: 3966340a99dde1d43b5526c35151dc00, type: 3}
-    prefab: {fileID: 0}
+    prefab: {fileID: 1726483599145890019, guid: 82576838a1bc2dd4cb63bae3c8c457f6, type: 3}
     description: bonano
   - type: 4
     sprite: {fileID: 21300000, guid: 44d55c2a19703f243accb876bfaef191, type: 3}
-    prefab: {fileID: 0}
+    prefab: {fileID: 1726483599145890019, guid: 384374783bd09964bb3bc9e54845840f, type: 3}
     description: dog
   - type: 5
     sprite: {fileID: 21300000, guid: 9fbeb2a6a62355643a236b38fdcb4d50, type: 3}
-    prefab: {fileID: 0}
+    prefab: {fileID: 1726483599145890019, guid: b2f6c0cd18332d94a87add9c5e711d00, type: 3}
     description: flower
   - type: 6
     sprite: {fileID: 21300000, guid: 0aacd06cb3e94fd41b48c092e13f5218, type: 3}
-    prefab: {fileID: 0}
+    prefab: {fileID: 1726483599145890019, guid: 37fbaf3a6573b184493cebba2faa074e, type: 3}
     description: duck
   - type: 7
     sprite: {fileID: 21300000, guid: e0f0c44d60a6cd442841b674510602a2, type: 3}
