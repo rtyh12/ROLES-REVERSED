@@ -20,7 +20,7 @@ public class MonsterButtonImageSetter : MonoBehaviour {
     }
 
     public void ClickButton() {
-        Debug.Log(monsterType);
+        stateManager.Spawn(monsterType);
         SetNextMonster();
     }
 }

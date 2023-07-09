@@ -42,4 +42,9 @@ public class StateManager : MonoBehaviour {
         bool doWeStillHaveMonsters = lastSentMonsterIndex < upcomingMonsters.Count;
         return doWeStillHaveMonsters ? upcomingMonsters[lastSentMonsterIndex] : MonsterType.None;
     }
+
+    public void Spawn(MonsterType monsterType) {
+        var monsterData = GetMonsterDataFor(monsterType);
+        Instantiate(monsterData.prefab, new Vector3(7f, 0f, 0f), Quaternion.identity);
+    }
 }
