@@ -77,6 +77,7 @@ public class HealthScript : MonoBehaviour {
 
         if (team == Team.enemy) {
             SceneMaster.enemyKilledCounter();
+            Debug.Log(SceneMaster.killedEnemies);
         } else {
             // game over, restart scene
         }
