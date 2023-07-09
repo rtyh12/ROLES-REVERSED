@@ -58,7 +58,7 @@ public class CubicleHamdler : MonoBehaviour
                 //fades out the black screen into the cubicle scene
                 if (blackscreen.color[3] > 0)
                 {
-                    blackscreenOpacity = blackscreen.color[3] - 0.001f;
+                    blackscreenOpacity = blackscreen.color[3] - 0.001f * speed;
                     blackscreen.color = new Color(0f,0f,0f,blackscreenOpacity);
                     day.color = new Color(1f, 1f, 1f, blackscreenOpacity);
                 }
@@ -82,7 +82,7 @@ public class CubicleHamdler : MonoBehaviour
             case State.OpenComputer:
                 if (pc.transform.position[1] < finalPCPosition[1]-0.2f)
                 {
-                    pc.transform.position += 0.002f * (finalPCPosition - pc.transform.position);
+                    pc.transform.position += 0.002f * (finalPCPosition - pc.transform.position) * speed;
                 }
                 else
                 {
@@ -99,7 +99,7 @@ public class CubicleHamdler : MonoBehaviour
 
                 if (heroOpacity < 1)
                 {
-                    heroOpacity = heroImage.color[3] + 0.001f;
+                    heroOpacity = heroImage.color[3] + 0.001f * speed;
                     heroImage.color = new Color(1f, 1f, 1f, heroOpacity);
                 }
                 else
@@ -118,7 +118,7 @@ public class CubicleHamdler : MonoBehaviour
             case State.FadeOut:
                 if (blackscreen.color[3] < 1)
                 {
-                    blackscreenOpacity = blackscreen.color[3] + 0.001f;
+                    blackscreenOpacity = blackscreen.color[3] + 0.001f * speed;
                     blackscreen.color = new Color(0f, 0f, 0f, blackscreenOpacity);
                 }
                 else
