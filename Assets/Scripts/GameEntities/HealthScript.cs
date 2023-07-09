@@ -20,6 +20,7 @@ public class HealthScript : MonoBehaviour {
             UpdateHealthBar(_health);
             if(team == Team.hero){
                 SceneMaster.heroHP = _health;
+                
             }
         }
     }
@@ -77,7 +78,6 @@ public class HealthScript : MonoBehaviour {
     void Die() {
         var hero = GameObject.Find("Hero");
         var deathEffects = GetComponents<IDeathEffect>();
-        var canvas = GameObject.Find("GameOver");
         foreach (var deathEffect in deathEffects) {
             deathEffect.PerformOn(hero);
         }
@@ -86,11 +86,14 @@ public class HealthScript : MonoBehaviour {
             SceneMaster.enemyKilledCounter();
             Debug.Log(SceneMaster.killedEnemies);
         } else {
-
-            canvas.gameObject.SetActive(true);
+            GameObject canvas = GameObject.Find("GameOver");
+            Debug.Log("a");
+            canvas.SetActive(true);
+            Debug.Log("b");
             PauseGame();
         }
 
+            Debug.Log("c");
         Destroy(gameObject);
     }
 

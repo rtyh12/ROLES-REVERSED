@@ -78,7 +78,7 @@ public class DialogScript : MonoBehaviour {
     }
 
     public void Update() {
-        Debug.Log(initiated);
+        // Debug.Log(initiated);
         if (!initiated)
         {
             initiated = SceneMaster.initiateEmailText;
