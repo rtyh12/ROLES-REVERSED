@@ -76,5 +76,9 @@ public class HealthScript : MonoBehaviour {
         foreach (var deathEffect in deathEffects) {
             deathEffect.PerformOn(hero);
         }
+
+        if (isHero) {
+            // game over, restart scene
+        }
     }
 }
