@@ -121,7 +121,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseDamage: 10
-  attackCooldown: 1
+  attackCooldown: 0.25
 --- !u!61 &4153268508285029573
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -199,7 +199,7 @@ MonoBehaviour:
   romance: 0
   hungerDrainPerSecond: 1
   healthDrainWhenHungryPerSecond: 5
-  hungerInitial: 10
+  hungerInitial: 50
   romanceInitial: 0
   xpInitial: 0
 --- !u!95 &6617907304816167936

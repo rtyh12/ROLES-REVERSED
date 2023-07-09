@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using static SceneMaster;
@@ -17,7 +18,7 @@ public class DialogScript : MonoBehaviour {
     private int currentTextIndex;
     private AudioSource audioSource;
 
-    public string[] text;
+    public List<string> text = new List<string>();
 
     //CanvasGroup Group;
 
@@ -28,6 +29,7 @@ public class DialogScript : MonoBehaviour {
 
         audioSource = GetComponent<AudioSource>();
         currentTextIndex = 0;
+        text = SceneMaster.getDialogue();
     }
 
     public void Show(string text) {
@@ -97,13 +99,14 @@ public class DialogScript : MonoBehaviour {
             {
                 pause = false;
                 currentTextIndex++;
-                if (currentTextIndex < text.Length)
+                if (currentTextIndex < text.Count)
                 {
                     ReplaceText(text[currentTextIndex]);
                 }
                 else
                 {
                     end = true;
+                    textDone = true;
                 }
             }
             else
