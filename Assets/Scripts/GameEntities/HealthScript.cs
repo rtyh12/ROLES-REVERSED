@@ -19,7 +19,14 @@ public class HealthScript : MonoBehaviour {
             UpdateHealthBar(_health);
         }
     }
-    public float maxHealth;
+    public float _maxHealth;
+    public float maxHealth {
+        get {
+            return team == Team.hero ? SceneMaster.heroMaxHP : _maxHealth;
+        }
+    }
+
+    public bool isHero;
 
     public GameObject healthBarPrefab;
     private Image healthBarImage;
@@ -62,13 +69,18 @@ public class HealthScript : MonoBehaviour {
     }
 
     void Die() {
-        Destroy(gameObject);
-
         var hero = GameObject.Find("Hero");
         var deathEffects = GetComponents<IDeathEffect>();
         foreach (var deathEffect in deathEffects) {
             deathEffect.PerformOn(hero);
         }
-        SceneMaster.enemyKilledCounter();
+
+        if (team == Team.enemy) {
+            SceneMaster.enemyKilledCounter();
+        } else {
+            // game over, restart scene
+        }
+
+        Destroy(gameObject);
     }
 }

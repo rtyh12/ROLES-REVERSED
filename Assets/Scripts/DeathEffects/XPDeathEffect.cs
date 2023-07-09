@@ -7,6 +7,7 @@ public class XPDeathEffect : MonoBehaviour, IDeathEffect {
     public float xpDropped = 25;
     
     public void PerformOn(GameObject hero) {
-        hero.GetComponent<HeroScript>().xp += xpDropped;
+        SceneMaster.heroXP += xpDropped;
+        hero.GetComponent<HeroScript>().SetLevelStats(SceneMaster.heroXP);
     }
 }

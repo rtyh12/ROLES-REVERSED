@@ -1,30 +1,41 @@
 using UnityEngine;
 
 public class HeroScript : MonoBehaviour {
-    public float xp;
-    public int level {
-        get {
-            return (int)(xp / 100.0);
-        }
-    }
+    public int level;
     public float hunger;
-    public float romance;
 
     public float hungerDrainPerSecond = 0.01f;
     public float healthDrainWhenHungryPerSecond = 1f;
 
-    public float hungerInitial;
     public float romanceInitial;
-    public float xpInitial;
 
     private HealthScript healthScript;
+
+    public void SetLevelStats(float xp) {
+        // calculate level
+        level = (int)(xp / 10f);
+
+        // apply effects
+        SceneMaster.heroAttackDamage = SceneMaster.heroAttackDamageInitial + level * 2;
+        SceneMaster.heroMaxHunger = SceneMaster.heroMaxHungerInitial + level * 5;
+        SceneMaster.heroMaxHP = SceneMaster.heroMaxHPInitial + level * 10;
+
+        healthScript.health = Mathf.Min(
+            healthScript.health + 10,
+            SceneMaster.heroMaxHP
+        );
+        hunger = Mathf.Min(
+            hunger + 5,
+            SceneMaster.heroMaxHP
+        );
+
+        // Debug.Log($"XP={xp}, Level={level}, AttackDamage={SceneMaster.heroAttackDamage}, heroMaxHunger={SceneMaster.heroMaxHunger}, heroMaxHP={SceneMaster.heroMaxHunger}");
+    }
 
     void Start() {
         healthScript = GetComponent<HealthScript>();
         
-        hunger = hungerInitial;
-        romance = romanceInitial;
-        xp = xpInitial;
+        hunger = SceneMaster.heroMaxHunger;
     }
 
     void Update() {

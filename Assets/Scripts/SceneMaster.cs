@@ -8,10 +8,13 @@ public static class SceneMaster
     public static int levelCounter = 0;
 
     // HERO
-    // set initial values for these 3 in HeroScript
-    public static float heroAttackDamage;
-    public static float heroMaxHunger;
-    public static float heroMaxHP;
+    public static float heroAttackDamageInitial = 10;
+    public static float heroMaxHungerInitial = 50;
+    public static float heroMaxHPInitial = 100;
+    
+    public static float heroAttackDamage = heroAttackDamageInitial;
+    public static float heroMaxHunger = heroMaxHungerInitial;
+    public static float heroMaxHP = heroMaxHPInitial;
 
     public static float heroXP = 0;
     public static float heroRomance = 0;
