@@ -45,6 +45,7 @@ public class StateManager : MonoBehaviour {
 
     public void Spawn(MonsterType monsterType) {
         var monsterData = GetMonsterDataFor(monsterType);
-        Instantiate(monsterData.prefab, new Vector3(7f, 0f, 0f), Quaternion.identity);
+        var verticalPosition = Random.Range(-3, 3);
+        Instantiate(monsterData.prefab, new Vector3(7f, verticalPosition, 0f), Quaternion.identity);
     }
 }
