@@ -17,7 +17,7 @@ public class Objective : MonoBehaviour
     {
         healthScript = hero.GetComponent<HealthScript>();
         stateManager = GetComponent<StateManager>();
-        fightLevel = SceneMaster.levelCounter-1;
+        fightLevel = SceneMaster.levelCounter-2;
         gameOverScreen = GetComponent<Canvas>();
     }
 

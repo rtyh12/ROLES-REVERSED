@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public static class SceneMaster
 {
-    public static int levelCounter = 0;
+    public static int levelCounter = 1;
 
     // HERO
     public static float heroAttackDamageInitial = 10;
@@ -78,13 +78,13 @@ public static class SceneMaster
 
     public static void loadNextLevel()
     {
-        
-        SceneManager.LoadScene(levelCounter+1);
+        levelCounter++;
+        SceneManager.LoadScene(levelCounter);
     }
 
     public static void loadCubicle()
     {
-        levelCounter++;
+        
         SceneManager.LoadScene(1);
     }
 
