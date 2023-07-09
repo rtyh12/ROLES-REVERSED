@@ -8,10 +8,11 @@ public class CubicleHamdler : MonoBehaviour
 
     public float timeLimit = 3f;
     public float timer = 0f;
-    private enum State {LoadingScene, FadeIn, Waiting, OpenComputer, OpenMail, Read, FadeOut};
+    private enum State {LoadingScene, FadeIn, Waiting, OpenComputer, Read, OpenHeroImage,HeroImage, FadeOut};
     private State state;
 
     float blackscreenOpacity = 1f;
+    float heroOpacity = 0f;
     Vector3 initialPCPosition;
     Vector3 finalPCPosition;
 
@@ -20,13 +21,13 @@ public class CubicleHamdler : MonoBehaviour
     public TextMeshProUGUI email;
     public GameObject pc;
     public GameObject teams;
-    public GameObject heroImage;
+    public SpriteRenderer heroImage;
     public AudioSource teamsSound;
 
     // Start is called before the first frame update
     void Start()
     {
-        //AudioSource source1 = GameObject.GetComponent<AudioSource>();
+
         state = State.LoadingScene;
         initialPCPosition = new Vector3(0, -10f, 0);
         finalPCPosition = new Vector3(0, -0.732f, 0);
@@ -99,15 +100,46 @@ public class CubicleHamdler : MonoBehaviour
                 }
               
                 break;
+            case State.Read:
+                if (SceneMaster.textDone&&SceneMaster.firstCubicleScene) { state = State.OpenHeroImage; }
+                else if (SceneMaster.textDone) { state = State.FadeOut; }
+                break;
+            case State.OpenHeroImage:
+
+                if (heroOpacity < 1)
+                {
+                    heroOpacity = heroImage.color[3] + 0.001f;
+                    heroImage.color = new Color(1f, 1f, 1f, heroOpacity);
+                }
+                else
+                {
+                    state = State.HeroImage;
+                }
+                break;
+
+            case State.HeroImage:
+                if (Input.GetMouseButtonDown(0))
+                {
+                    state = State.FadeOut;
+                }
+                break;
+
+            case State.FadeOut:
+                if (blackscreen.color[3] < 1)
+                {
+                    blackscreenOpacity = blackscreen.color[3] + 0.001f;
+                    blackscreen.color = new Color(0f, 0f, 0f, blackscreenOpacity);
+                }
+                else
+                {
+                    SceneMaster.loadNextLevel();
+
+                }
+                break;
             default:
                 // code block
                 break;
         }
-
-    void FixedUpdate()
-    {
-
-    }
 
 }
 }
