@@ -7,7 +7,8 @@ public class GameOverLogic : MonoBehaviour
 {
 
     public void Retry() {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        SceneMaster.levelCounter-=1;
+        SceneMaster.loadNextLevel();
     }
     public void QuitGame() {
         Application.Quit();
