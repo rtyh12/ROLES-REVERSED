@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 5185671177384502458}
   - component: {fileID: 1844784326104892553}
   m_Layer: 0
-  m_Name: Doctor
+  m_Name: Basic
   m_TagString: Damageable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -79,7 +79,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 538713754, guid: e7876688983bdc347b2ce22536f7c99d, type: 3}
+  m_Sprite: {fileID: 1879828029, guid: e9521b822a876524aa847c0380d680a4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -137,7 +137,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.24, y: 0.33}
+    oldSize: {x: 0.23, y: 0.27}
     newSize: {x: 0.21, y: 0.24}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -192,5 +192,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2850973a6ad5dfa449966ab0b5bb7acc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseDamage: -1
+  baseDamage: 1
   attackCooldown: 0.25

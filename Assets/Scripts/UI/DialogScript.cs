@@ -15,20 +15,18 @@ public class DialogScript : MonoBehaviour {
     public TMP_Text Next;
     private string currentText;
     private int currentTextIndex;
+    private AudioSource audioSource;
 
-    public string[] text = new string[] {
-        "You are the regional district manager of the local evil horde. Your boss wants you to deal with some pesty little heroes by sending the troops in their direction. It is a simple desk job.",
-        "The available troops come in, zou send them out in a way that makes sense and kills the hero. Easy. But damn! They kinda cute???? Maybe just send some easier monsters to scare them off but not kill them?",
-        "Oh no they are still going… Thez look a little hungry though, maybe you should send them a snack? The boss won’t like that though… Guess you have to smuggle it to them using the horde. Hopefully they survive your romantic gift.",
-    };
+    public string[] text;
 
     //CanvasGroup Group;
 
     // Start is called before the first frame update
     void Start() {
         //Group = GetComponent<CanvasGroup>();
-        //Group.alpha = 0;        
-       
+        //Group.alpha = 0;       
+
+        audioSource = GetComponent<AudioSource>();
         currentTextIndex = 0;
     }
 
@@ -58,12 +56,15 @@ public class DialogScript : MonoBehaviour {
     private IEnumerator DisplayText() {
         Text.text = "";
 
+        audioSource.Play();
+
         foreach (char c in currentText.ToCharArray()) {
             Text.text += c;
             yield return new WaitForSecondsRealtime(kMaxTextTime / TextSpeed);
         }
 
         if (Text.text == currentText) {
+            audioSource.Stop();
             StopAllCoroutines();
         }
         yield return null;
@@ -86,7 +87,10 @@ public class DialogScript : MonoBehaviour {
         }
         else
         {
-            pause = Text.text == currentText ? true : false;
+            pause = Text.text == currentText;
+            if (pause) {
+                audioSource.Stop();
+            }
             showNext();
 
             if (pause && Input.GetMouseButtonDown(0))
@@ -109,49 +113,6 @@ public class DialogScript : MonoBehaviour {
                     StopAllCoroutines();
                     Text.text = currentText;
                 }
-            }
-            pause = Text.text == currentText ? true : false;
-            showNext();
-
-            if (pause && Input.GetMouseButtonDown(0))
-            {
-                pause = false;
-                currentTextIndex++;
-                if (currentTextIndex < text.Length)
-                {
-                    ReplaceText(text[currentTextIndex]);
-                }
-                else
-                {
-                    end = true;
-                }
-            }
-            else
-            {
-                if (Input.GetMouseButtonDown(0))
-                {
-                    StopAllCoroutines();
-                    Text.text = currentText;
-                }
-            }
-        }
-
-        pause = Text.text == currentText ? true : false;
-        showNext();
-
-        if (pause && Input.GetMouseButtonDown(0)) {
-            pause = false;
-            currentTextIndex++;
-            if (currentTextIndex < text.Length) {
-                ReplaceText(text[currentTextIndex]);
-            } else {
-                end = true;
-                
-            }
-        } else {
-            if (Input.GetMouseButtonDown(0)) {
-                StopAllCoroutines();
-                Text.text = currentText;
             }
         }
     }
