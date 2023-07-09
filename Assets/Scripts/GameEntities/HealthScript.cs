@@ -19,7 +19,14 @@ public class HealthScript : MonoBehaviour {
             UpdateHealthBar(_health);
         }
     }
-    public float maxHealth;
+    public float _maxHealth;
+    public float maxHealth {
+        get {
+            return isHero ? SceneMaster.heroMaxHP : _maxHealth;
+        }
+    }
+
+    public bool isHero;
 
     public GameObject healthBarPrefab;
     private Image healthBarImage;

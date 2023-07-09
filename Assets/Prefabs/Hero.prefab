@@ -194,7 +194,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28c072ab159126e459404ec4ed394671, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xp: 0
+  level: 0
   hunger: 0
   romance: 0
   hungerDrainPerSecond: 1
@@ -202,6 +202,7 @@ MonoBehaviour:
   hungerInitial: 10
   romanceInitial: 0
   xpInitial: 0
+  sadassasa: {fileID: 4153268508285029627}
 --- !u!95 &6617907304816167936
 Animator:
   serializedVersion: 5
