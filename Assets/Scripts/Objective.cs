@@ -7,18 +7,18 @@ public class Objective : MonoBehaviour
     public bool objectiveReached = false;
     private int fightLevel;
 
-    public GameObject hero;
+    //public GameObject hero;
     public StateManager stateManager;
-    public Canvas gameOverScreen;
-    private HealthScript healthScript;
+    //public Canvas gameOverScreen;
+    //private HealthScript healthScript;
 
     // Start is called before the first frame update
     void Start()
     {
-        healthScript = hero.GetComponent<HealthScript>();
+        //healthScript = hero.GetComponent<HealthScript>();
         stateManager = GetComponent<StateManager>();
         fightLevel = SceneMaster.levelCounter;
-        gameOverScreen = GetComponent<Canvas>();
+        //gameOverScreen = GetComponent<Canvas>();
     }
 
     void PauseGame ()
@@ -40,7 +40,7 @@ public class Objective : MonoBehaviour
     */
     public void loadGameOver(){
 
-        if ((healthScript.health <= 0)) {
+        if ((SceneMaster.heroHP <= 0)) {
             //gameOverScreen.gameObject.SetActive(true);
             PauseGame();
         }
@@ -55,7 +55,7 @@ public class Objective : MonoBehaviour
 
         
         Debug.Log(objectiveReached);
-        loadGameOver();
+        //loadGameOver();
         switch(fightLevel){
 
             case 0: 
@@ -97,7 +97,7 @@ public class Objective : MonoBehaviour
                 //Debug.Log("third level objective");
 
                 float maxHealth = SceneMaster.heroMaxHP;
-                float currentHealth = healthScript.health;
+                float currentHealth = SceneMaster.heroHP;
                 if ((float)(currentHealth/maxHealth) <= 0.25){
                     objectiveReached = true;
                     SceneMaster.loadCubicle();
