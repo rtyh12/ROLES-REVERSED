@@ -70,6 +70,7 @@ public static class SceneMaster
             for (int i = 0; i < fightTexts[levelCounter].Count;  i++)
             {
                 returnedText.Add(fightTexts[levelCounter][i]);
+                initiateEmailText = true;
             }
         }
 
