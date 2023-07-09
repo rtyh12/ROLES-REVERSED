@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: ba9ce179d2d086843bd1e9e7bc897252
+  - enabled: 1
+    path: Assets/Scenes/Cubicle.unity
+    guid: 02284f92e2d90f140bbdf6341e2a1e02
+  - enabled: 1
+    path: Assets/Scenes/Fight0.unity
+    guid: c1eecb05a2374ee46aaa9d777882ac41
+  - enabled: 1
+    path: Assets/Scenes/Fight1.unity
+    guid: 55f98e3d946b172418d07a505066333c
+  - enabled: 1
+    path: Assets/Scenes/Fight2.unity
+    guid: 738cc6751d3ad0c4e94ff0af3e2ced2b
+  - enabled: 1
+    path: Assets/Scenes/Fight3.unity
+    guid: b27eedb01b52c1c4991003d7d000af9b
+  - enabled: 1
+    path: Assets/Scenes/Fight4.unity
+    guid: 5e384de03ad2d434aae35637f05051bd
+  - enabled: 1
+    path: Assets/Scenes/Fight5.unity
+    guid: e60c8152017e9c14ba6089263f9fdabe
+  - enabled: 1
+    path: Assets/Scenes/Fight6.unity
+    guid: 5c07dd889b461c846b4ddbf9c7dbe675
+  - enabled: 1
+    path: Assets/Scenes/Fight7.unity
+    guid: b68cbea4276461940ac409388eb9be0a
+  - enabled: 1
+    path: Assets/Scenes/Fight8.unity
+    guid: 52b744d409cca2246874eb9f51ce3cb5
+  - enabled: 1
+    path: Assets/Scenes/Fight9.unity
+    guid: 3d36c754412c8d24eaaaf694d47e632b
+  - enabled: 1
+    path: Assets/Scenes/Fight10.unity
+    guid: fa21ae64e0d9a884aa452d1219942dcb
+  - enabled: 1
+    path: Assets/Scenes/Outro.unity
+    guid: 5557e5ee8c9c18946bd91d4492bde6b0
+  m_configObjects: {}
