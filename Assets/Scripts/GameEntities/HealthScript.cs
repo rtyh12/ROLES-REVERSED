@@ -69,5 +69,6 @@ public class HealthScript : MonoBehaviour {
         foreach (var deathEffect in deathEffects) {
             deathEffect.PerformOn(hero);
         }
+        SceneMaster.enemyKilledCounter();
     }
 }
