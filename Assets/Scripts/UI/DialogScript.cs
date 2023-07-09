@@ -1,12 +1,14 @@
 using System.Collections;
 using UnityEngine;
 using TMPro;
+using static SceneMaster;
 
 public class DialogScript : MonoBehaviour {
     //const string kAlphaCode = "<color=#00000000>";
     const float kMaxTextTime = 0.1f;
     public static int TextSpeed = 2;
-    private bool pause = false;
+    private bool initiated = false;
+    public bool pause = true;
     private bool end = false;
 
     public TMP_Text Text;
@@ -26,7 +28,7 @@ public class DialogScript : MonoBehaviour {
     void Start() {
         //Group = GetComponent<CanvasGroup>();
         //Group.alpha = 0;        
-        Show(text[0]);
+       
         currentTextIndex = 0;
     }
 
@@ -73,6 +75,67 @@ public class DialogScript : MonoBehaviour {
     }
 
     public void Update() {
+        Debug.Log(initiated);
+        if (!initiated)
+        {
+            initiated = SceneMaster.initiateEmailText;
+            if (initiated)
+            {
+                Show(text[0]);
+            }
+        }
+        else
+        {
+            pause = Text.text == currentText ? true : false;
+            showNext();
+
+            if (pause && Input.GetMouseButtonDown(0))
+            {
+                pause = false;
+                currentTextIndex++;
+                if (currentTextIndex < text.Length)
+                {
+                    ReplaceText(text[currentTextIndex]);
+                }
+                else
+                {
+                    end = true;
+                }
+            }
+            else
+            {
+                if (Input.GetMouseButtonDown(0))
+                {
+                    StopAllCoroutines();
+                    Text.text = currentText;
+                }
+            }
+            pause = Text.text == currentText ? true : false;
+            showNext();
+
+            if (pause && Input.GetMouseButtonDown(0))
+            {
+                pause = false;
+                currentTextIndex++;
+                if (currentTextIndex < text.Length)
+                {
+                    ReplaceText(text[currentTextIndex]);
+                }
+                else
+                {
+                    end = true;
+                }
+            }
+            else
+            {
+                if (Input.GetMouseButtonDown(0))
+                {
+                    StopAllCoroutines();
+                    Text.text = currentText;
+                }
+            }
+        }
+
         pause = Text.text == currentText ? true : false;
         showNext();
 
@@ -83,6 +146,7 @@ public class DialogScript : MonoBehaviour {
                 ReplaceText(text[currentTextIndex]);
             } else {
                 end = true;
+                
             }
         } else {
             if (Input.GetMouseButtonDown(0)) {

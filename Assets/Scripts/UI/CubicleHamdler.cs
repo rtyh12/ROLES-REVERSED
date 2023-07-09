@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-
+using static SceneMaster;
 public class CubicleHamdler : MonoBehaviour
 {
 
@@ -17,6 +17,7 @@ public class CubicleHamdler : MonoBehaviour
 
     public SpriteRenderer blackscreen;
     public TextMeshProUGUI day;
+    public TextMeshProUGUI email;
     public GameObject pc;
     public GameObject teams;
     public GameObject heroImage;
@@ -46,7 +47,7 @@ public class CubicleHamdler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(timer);
+        Debug.Log(state);
 
         switch (state)
         {
@@ -87,9 +88,14 @@ public class CubicleHamdler : MonoBehaviour
                 }
                 break;
             case State.OpenComputer:
-                if (pc.transform.position[1] < finalPCPosition[1])
+                if (pc.transform.position[1] < finalPCPosition[1]-0.2f)
                 {
                     pc.transform.position += 0.002f * (finalPCPosition - pc.transform.position);
+                }
+                else
+                {
+                    state = State.Read;
+                    SceneMaster.initiateEmailText = true;
                 }
               
                 break;
