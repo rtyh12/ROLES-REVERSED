@@ -22,6 +22,7 @@ public static class SceneMaster
     // enemy things
     public static int killedEnemies = 0;
     public static int killedDucks = 0;
+    public static int killedBanonas = 0;
 
     // blah
     public static bool initiateEmailText = false;

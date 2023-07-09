@@ -8,5 +8,6 @@ public class BanonaDeathEffect : MonoBehaviour, IDeathEffect {
     
     public void PerformOn(GameObject hero) {
         hero.GetComponent<HeroScript>().hunger += hungerDropped;
+        SceneMaster.killedBanonas++;
     }
 }

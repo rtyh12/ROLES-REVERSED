@@ -41,7 +41,7 @@ public class Objective : MonoBehaviour
     public void loadGameOver(){
 
         if ((healthScript.health <= 0)) {
-            //gameOverScreen.SetActive(true);
+            //gameOverScreen.gameObject.SetActive(true);
             PauseGame();
         }
 
@@ -55,6 +55,7 @@ public class Objective : MonoBehaviour
 
         
         Debug.Log(objectiveReached);
+        loadGameOver();
         switch(fightLevel){
 
             case 0: 
@@ -81,6 +82,15 @@ public class Objective : MonoBehaviour
 
             case 2:
                 // hero kill 5 support troops and kill 20 units in total
+                // support troops = banona
+                if (SceneMaster.killedBanonas >= 5){
+                    objectiveReached = true;
+                    SceneMaster.killedBanonas = 0;
+                    SceneMaster.loadCubicle();
+                } else {
+                    objectiveReached = false;
+                }
+                break;
 
             case 3:
                 // hero close to death (1/4 health)
@@ -109,6 +119,14 @@ public class Objective : MonoBehaviour
             
             case 5:
                 // hero kill 20 units, no units impatience
+                if (SceneMaster.killedEnemies >= 20){
+                    objectiveReached = true;
+                    SceneMaster.resetEnemyKilledCounter();
+                    SceneMaster.loadCubicle();
+                } else {
+                    objectiveReached = false;
+                }
+                break;
             
             case 6:
                 // hero kill 20 units
@@ -132,7 +150,15 @@ public class Objective : MonoBehaviour
                 break;
                 
             case 8:
-                // 
+                // kill 30 and romance reach 60
+                if (SceneMaster.killedEnemies >= 30 && SceneMaster.heroRomance == 60){
+                    objectiveReached = true;
+                    SceneMaster.resetEnemyKilledCounter();
+                    SceneMaster.loadCubicle();
+                } else {
+                    objectiveReached = false;
+                }
+                break;
             
             case 9:
                 //  hero kill 3 ducks
@@ -146,7 +172,14 @@ public class Objective : MonoBehaviour
                 break;
             
             case 10:
-                // hero kill all unit types
+                // hero kill 50 
+                if (SceneMaster.heroRomance == 50){
+                    objectiveReached = true;
+                    SceneMaster.loadEnd();
+                } else {
+                    objectiveReached = false;
+                }
+                break;
         
             
             default:
