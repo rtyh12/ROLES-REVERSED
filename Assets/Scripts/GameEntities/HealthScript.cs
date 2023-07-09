@@ -8,8 +8,6 @@ public enum Team {
 
 public class HealthScript : MonoBehaviour {
     private float _health;
-    public Canvas gameOverScreen;
-
 
     public float health {
         get { return _health; }
@@ -64,9 +62,8 @@ public class HealthScript : MonoBehaviour {
         healthBarCanvas.SetActive(health < maxHealth - 0.01f);
     }
 
-    void Start() {
+    void Start() { 
 
-        gameOverScreen = GetComponent<Canvas>();
 
         healthBarCanvas = Instantiate(healthBarPrefab, transform.position, Quaternion.identity);
         healthBarCanvas.transform.SetParent(this.transform);
@@ -80,6 +77,7 @@ public class HealthScript : MonoBehaviour {
     void Die() {
         var hero = GameObject.Find("Hero");
         var deathEffects = GetComponents<IDeathEffect>();
+        var canvas = GameObject.Find("GameOver");
         foreach (var deathEffect in deathEffects) {
             deathEffect.PerformOn(hero);
         }
@@ -87,8 +85,8 @@ public class HealthScript : MonoBehaviour {
         if (team == Team.enemy) {
             SceneMaster.enemyKilledCounter();
         } else {
-            // game over, restart scene
-            gameOverScreen.gameObject.SetActive(true);
+
+            canvas.gameObject.SetActive(true);
             PauseGame();
         }
 

@@ -103,6 +103,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c6e403a14850214d8d698469254ac74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameOverScreen: {fileID: 3766111241898899481, guid: c5dfea6c667325840a3f83ac894a6e70, type: 3}
   _maxHealth: 0
   isHero: 1
   healthBarPrefab: {fileID: 8247855366076164493, guid: aaabdf2f1aba0244eb211d6aa7098808, type: 3}
