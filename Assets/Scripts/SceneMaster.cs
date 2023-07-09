@@ -78,12 +78,13 @@ public static class SceneMaster
 
     public static void loadNextLevel()
     {
-        levelCounter++;
+        
         SceneManager.LoadScene(levelCounter+1);
     }
 
     public static void loadCubicle()
     {
+        levelCounter++;
         SceneManager.LoadScene(1);
     }
 
