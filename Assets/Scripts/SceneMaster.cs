@@ -24,7 +24,15 @@ public static class SceneMaster
         new List<string>() {"FINAL DEADLINE:","Deliverable due!","Hero quite literally knocking at our door, last chance to avoid disaster and make sure evil plans™ can go ahead as planned.","All units are available and at high alert.","DO NOT DISAPPOINT ME."}
         } ;
 
-    public static List<List<string>> fightTexts;
+    public static List<List<string>> fightTexts = new List<List<string>>() { new List<string>() {"Oh dang, that threat looks pretty cute… *blush*","Kind of a shame to kill someone that good looking…","Maybe I can just scare them away without anyone getting hurt?" },
+        new List<string>() {"Oh no!","They are hurt!","They need a doctor!" },
+        new List<string>() {"Hmm, it seems like they are getting hungry…" },
+        new List<string>() {"Oh it looks like they got stronger!","Aren’t humans adorable?" },
+        new List<string>() {"Those dogs sure can’t wait to get into battle."},
+        new List<string>() {"They might come here?","It would be nice to meet them in person…","*blushes*" },
+        new List<string>() {"Wait, do they think I’m flirting with them???","*blushes*" },
+        new List<string>() { "Guess I can choose my own objectives today…" }
+    }  ;
 
 
     public static List<string> getDialogue()
