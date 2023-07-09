@@ -87,6 +87,7 @@ public class Objective : MonoBehaviour
                     objectiveReached = true;
                     SceneMaster.killedBanonas = 0;
                     SceneMaster.loadCubicle();
+                    SceneMaster.resetEnemyKilledCounter();
                 } else {
                     objectiveReached = false;
                 }
@@ -101,6 +102,7 @@ public class Objective : MonoBehaviour
                 if ((float)(currentHealth/maxHealth) <= 0.25){
                     objectiveReached = true;
                     SceneMaster.loadCubicle();
+                    SceneMaster.resetEnemyKilledCounter();
                 } else {
                     objectiveReached = false;
                 }
