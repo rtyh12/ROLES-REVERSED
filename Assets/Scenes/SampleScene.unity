@@ -1076,7 +1076,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.13074046, g: 0.1589602, b: 0.24528301, a: 0.64705884}
+  m_Color: {r: 0.13074046, g: 0.1589602, b: 0.24528301, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1231,7 +1231,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86f4491995b9f9c4abb7ae3254a4d936, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tipToShow: This Enemy does this and that
+  tipToShow: don't type in here it does nothing
 --- !u!114 &1566167460
 MonoBehaviour:
   m_ObjectHideFlags: 0
