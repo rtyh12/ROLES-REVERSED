@@ -8,6 +8,7 @@ public enum Team {
 
 public class HealthScript : MonoBehaviour {
     private float _health;
+
     public float health {
         get { return _health; }
         set {
@@ -17,6 +18,9 @@ public class HealthScript : MonoBehaviour {
             }
             _health = Mathf.Min(_health, maxHealth);
             UpdateHealthBar(_health);
+            if(team == Team.hero){
+                SceneMaster.heroHP = _health;
+            }
         }
     }
     public float _maxHealth;
@@ -58,7 +62,9 @@ public class HealthScript : MonoBehaviour {
         healthBarCanvas.SetActive(health < maxHealth - 0.01f);
     }
 
-    void Start() {
+    void Start() { 
+
+
         healthBarCanvas = Instantiate(healthBarPrefab, transform.position, Quaternion.identity);
         healthBarCanvas.transform.SetParent(this.transform);
         healthBarImage = healthBarCanvas.transform
@@ -71,6 +77,7 @@ public class HealthScript : MonoBehaviour {
     void Die() {
         var hero = GameObject.Find("Hero");
         var deathEffects = GetComponents<IDeathEffect>();
+        var canvas = GameObject.Find("GameOver");
         foreach (var deathEffect in deathEffects) {
             deathEffect.PerformOn(hero);
         }
@@ -79,9 +86,20 @@ public class HealthScript : MonoBehaviour {
             SceneMaster.enemyKilledCounter();
             Debug.Log(SceneMaster.killedEnemies);
         } else {
-            // game over, restart scene
+
+            canvas.gameObject.SetActive(true);
+            PauseGame();
         }
 
         Destroy(gameObject);
+    }
+
+    void PauseGame ()
+    {
+        Time.timeScale = 0;
+    }
+    void ResumeGame ()
+    {
+        Time.timeScale = 1;
     }
 }

@@ -18,7 +18,8 @@ public static class SceneMaster
 
     public static float heroXP = 0;
     public static float heroRomance = 0;
-
+    public static float heroHP;
+    
     // enemy things
     public static int killedEnemies = 0;
     public static int killedDucks = 0;

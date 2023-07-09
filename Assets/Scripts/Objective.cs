@@ -7,19 +7,25 @@ public class Objective : MonoBehaviour
     public bool objectiveReached = false;
     private int fightLevel;
 
-    public GameObject hero;
+    //public GameObject hero;
     public StateManager stateManager;
-    public Canvas gameOverScreen;
-    private HealthScript healthScript;
+    // public Canvas gameOverScreen;
+    //private HealthScript healthScript;
 
     // Start is called before the first frame update
     void Start()
     {
-        healthScript = hero.GetComponent<HealthScript>();
+        //healthScript = hero.GetComponent<HealthScript>();
         stateManager = GetComponent<StateManager>();
         fightLevel = SceneMaster.levelCounter-2;
-        gameOverScreen = GetComponent<Canvas>();
+        // gameOverScreen = GameObject.Find("GameOver").GetComponent<Canvas>();
+        // fightLevel = SceneMaster.levelCounter;
+        // //gameOverScreen = GetComponent<Canvas>();
     }
+
+    // void OnHeroDied() {
+    //     loadGameOver();
+    // }
 
     void PauseGame ()
     {
@@ -38,14 +44,14 @@ public class Objective : MonoBehaviour
         canvas.SetActive(True);
         some gamepause function that comes from unity should exist
     */
-    public void loadGameOver(){
+    // public void loadGameOver(){
 
-        if ((healthScript.health <= 0)) {
-            //gameOverScreen.gameObject.SetActive(true);
-            PauseGame();
-        }
+    //     if ((SceneMaster.heroHP <= 0)) {
+    //         gameOverScreen.gameObject.SetActive(true);
+    //         PauseGame();
+    //     }
 
-    }
+    // }
 
 
     // Update is called once per frame
@@ -54,8 +60,8 @@ public class Objective : MonoBehaviour
     {   
 
         
-        Debug.Log(objectiveReached);
-        loadGameOver();
+        // Debug.Log(objectiveReached);
+        // loadGameOver();
         switch(fightLevel){
 
             case 0: 
@@ -97,7 +103,7 @@ public class Objective : MonoBehaviour
                 //Debug.Log("third level objective");
 
                 float maxHealth = SceneMaster.heroMaxHP;
-                float currentHealth = healthScript.health;
+                float currentHealth = SceneMaster.heroHP;
                 if ((float)(currentHealth/maxHealth) <= 0.25){
                     objectiveReached = true;
                     SceneMaster.loadCubicle();
