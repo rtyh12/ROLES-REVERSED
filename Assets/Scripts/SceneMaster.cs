@@ -21,8 +21,8 @@ public static class SceneMaster
         new List<string>() {"I’m out of the office preparing evil plans™ and will be back at [Date of Return].","During this period I will have limited access to my email.","Please deal with any problems through hand-to-hand combat."},
         new List<string>() {"As a mandatory team-building exercise I am requesting that all units be sent out in teams of two.","It is important that we all find partners we can really rely on ahead of the evil plan™ launch."},
         new List<string>() {"Just wanted to touch base regarding project Kill Hero, due to increasing urgency I require a status update ASAP!"},
-        new List<string>() {"FINAL DEADLINE:","Deliverable due!","Hero quite literally knocking at our door, last chance to avoid disaster and make sure evil plans™ can go ahead as planned.","All units are available and at high alert.","DO NOT DISAPPOINT ME."},
-        } };
+        new List<string>() {"FINAL DEADLINE:","Deliverable due!","Hero quite literally knocking at our door, last chance to avoid disaster and make sure evil plans™ can go ahead as planned.","All units are available and at high alert.","DO NOT DISAPPOINT ME."}
+        } ;
 
     public static List<List<string>> fightTexts;
 
