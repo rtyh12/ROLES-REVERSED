@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f9d26224c113d84397b4387b3c3c2c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  upcomingMonsters: 0000000000000000000000000000000000000000000000000000000004000000040000000400000004000000040000000400000004000000
+  upcomingMonsters: 00000000010000000100000000000000
   monsterData:
   - type: 0
     sprite: {fileID: 21300000, guid: 692e81e837fbe7b489fc7502b131acda, type: 3}
@@ -1715,7 +1715,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1000
   m_Sprite: {fileID: 21300000, guid: 3a28b24f5fae8344788ba2d58c292203, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

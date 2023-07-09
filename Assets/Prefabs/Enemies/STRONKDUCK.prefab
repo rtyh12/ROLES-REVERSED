@@ -115,7 +115,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c6e403a14850214d8d698469254ac74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 25
+  maxHealth: 200
   healthBarPrefab: {fileID: 8247855366076164493, guid: aaabdf2f1aba0244eb211d6aa7098808, type: 3}
   team: 1
   healthyAbove: 0.8
@@ -179,7 +179,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c18c729f4f9d68648b287abacc24f4b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xpDropped: 25
+  xpDropped: 30
 --- !u!114 &1844784326104892553
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -192,5 +192,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2850973a6ad5dfa449966ab0b5bb7acc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseDamage: 5
+  baseDamage: 100
   attackCooldown: 0.25
