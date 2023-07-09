@@ -6,7 +6,8 @@ using static SceneMaster;
 public class CubicleHamdler : MonoBehaviour
 {
 
-    public float timeLimit = 3f;
+    public float timeLimit = 1.5f;
+    public float speed = 15;
     public float timer = 0f;
     private enum State {LoadingScene, FadeIn, Waiting, OpenComputer, Read, OpenHeroImage,HeroImage, FadeOut};
     private State state;
@@ -44,7 +45,7 @@ public class CubicleHamdler : MonoBehaviour
         {
             case State.LoadingScene:
                 //Shows a black screen and the number of the day
-                timer += Time.deltaTime; 
+                timer += Time.deltaTime * speed; 
                 if (timer >= timeLimit)
                 {
                     state = State.FadeIn;
@@ -67,7 +68,7 @@ public class CubicleHamdler : MonoBehaviour
                 }
                 break;
             case State.Waiting:
-                timer += Time.deltaTime;
+                timer += Time.deltaTime * speed;
                 if (timer >= timeLimit)
                 {
                     state = State.OpenComputer;
