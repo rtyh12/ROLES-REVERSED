@@ -1,16 +1,6 @@
 using UnityEngine;
 
 public class HeroScript : MonoBehaviour {
-    private float _xp;
-    public float xp {
-        set {
-            _xp = xp;
-            SetLevelStats(_xp);
-        }
-        get {
-            return _xp;
-        }
-    }
     public int level;
     public float hunger;
 
@@ -21,7 +11,7 @@ public class HeroScript : MonoBehaviour {
 
     private HealthScript healthScript;
 
-    void SetLevelStats(float xp) {
+    public void SetLevelStats(float xp) {
         // calculate level
         level = (int)(xp / 10f);
 
@@ -39,7 +29,7 @@ public class HeroScript : MonoBehaviour {
             SceneMaster.heroMaxHP
         );
 
-        Debug.Log($"XP={xp}, Level={level}, AttackDamage={SceneMaster.heroAttackDamage}, heroMaxHunger={SceneMaster.heroMaxHunger}, heroMaxHP={SceneMaster.heroMaxHunger}");
+        // Debug.Log($"XP={xp}, Level={level}, AttackDamage={SceneMaster.heroAttackDamage}, heroMaxHunger={SceneMaster.heroMaxHunger}, heroMaxHP={SceneMaster.heroMaxHunger}");
     }
 
     void Start() {
