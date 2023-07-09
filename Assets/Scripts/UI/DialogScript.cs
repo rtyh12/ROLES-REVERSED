@@ -88,6 +88,9 @@ public class DialogScript : MonoBehaviour {
         else
         {
             pause = Text.text == currentText;
+            if (pause) {
+                audioSource.Stop();
+            }
             showNext();
 
             if (pause && Input.GetMouseButtonDown(0))
