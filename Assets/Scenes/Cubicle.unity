@@ -703,17 +703,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 737396459}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c9d03b3e28fa534fa1ef6722e87d412, type: 3}
+  m_Script: {fileID: 11500000, guid: 522581798a0a3124cbde399ba030d54d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   timeLimit: 3
   timer: 0
-  blackscreen: {fileID: 470197799}
-  day: {fileID: 600547362}
-  pc: {fileID: 312542047}
+  blackscreen: {fileID: 0}
+  day: {fileID: 0}
+  pc: {fileID: 0}
   teams: {fileID: 0}
   heroImage: {fileID: 0}
-  teamsSound: {fileID: 312542050}
+  teamsSound: {fileID: 0}
 --- !u!82 &737396463
 AudioSource:
   m_ObjectHideFlags: 0
