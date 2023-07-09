@@ -286,7 +286,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 18
+  m_fontSize: 72
   m_fontSizeBase: 70
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -457,7 +457,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectiveReached: 0
-  hero: {fileID: 1220954983}
+  hero: {fileID: 4153268508285029569, guid: b922cb7cdf196a74c95c533476221e24, type: 3}
   stateManager: {fileID: 8965687}
   gameOverScreen: {fileID: 1748848124}
 --- !u!1 &367047555
@@ -1280,7 +1280,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1103891387}
-  - {fileID: 1748848128}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1708,11 +1707,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1149276720}
   m_CullTransparentMesh: 1
---- !u!1 &1220954983 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4153268508285029569, guid: b922cb7cdf196a74c95c533476221e24, type: 3}
-  m_PrefabInstance: {fileID: 4153268509036617051}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1557294792
 GameObject:
   m_ObjectHideFlags: 0
@@ -2047,7 +2041,7 @@ GameObject:
   - component: {fileID: 1748848126}
   - component: {fileID: 1748848125}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: GameOver
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2135,12 +2129,12 @@ RectTransform:
   m_GameObject: {fileID: 1748848123}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1557294793}
-  m_Father: {fileID: 638615180}
-  m_RootOrder: 1
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}

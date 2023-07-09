@@ -19,6 +19,7 @@ public static class SceneMaster
     // enemy things
     public static int killedEnemies = 0;
     public static int killedDucks = 0;
+    public static int killedBanonas = 0;
 
     // blah
     public static bool initiateEmailText = false;
@@ -87,7 +88,6 @@ public static class SceneMaster
     {
         SceneManager.LoadScene(13);
     }
-<<<<<<< HEAD
 
     public static void enemyKilledCounter()
     {
@@ -99,6 +99,4 @@ public static class SceneMaster
         killedEnemies = 0;
     }
 
-=======
->>>>>>> d66c7f31031ed8fbff78e4002f0eea999b5c96be
 }
