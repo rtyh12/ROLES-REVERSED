@@ -69,8 +69,6 @@ public class HealthScript : MonoBehaviour {
     }
 
     void Die() {
-        Destroy(gameObject);
-
         var hero = GameObject.Find("Hero");
         var deathEffects = GetComponents<IDeathEffect>();
         foreach (var deathEffect in deathEffects) {
@@ -80,5 +78,7 @@ public class HealthScript : MonoBehaviour {
         if (isHero) {
             // game over, restart scene
         }
+
+        Destroy(gameObject);
     }
 }

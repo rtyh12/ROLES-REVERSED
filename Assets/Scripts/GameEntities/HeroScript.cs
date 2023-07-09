@@ -26,9 +26,9 @@ public class HeroScript : MonoBehaviour {
         level = (int)(xp / 10f);
 
         // apply effects
-        SceneMaster.heroAttackDamage = 10 + level * 2;
-        SceneMaster.heroMaxHunger = 50 + level * 5;
-        SceneMaster.heroMaxHP = 10 + level * 10;
+        SceneMaster.heroAttackDamage = SceneMaster.heroAttackDamageInitial + level * 2;
+        SceneMaster.heroMaxHunger = SceneMaster.heroMaxHungerInitial + level * 5;
+        SceneMaster.heroMaxHP = SceneMaster.heroMaxHPInitial + level * 10;
 
         healthScript.health = Mathf.Min(
             healthScript.health + 10,
@@ -38,6 +38,8 @@ public class HeroScript : MonoBehaviour {
             hunger + 5,
             SceneMaster.heroMaxHP
         );
+
+        Debug.Log($"Level={level}, AttackDamage={SceneMaster.heroAttackDamage}, heroMaxHunger={SceneMaster.heroMaxHunger}, heroMaxHP={SceneMaster.heroMaxHunger}");
     }
 
     void Start() {
