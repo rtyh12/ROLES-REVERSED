@@ -15,6 +15,7 @@ public class DialogScript : MonoBehaviour {
     public TMP_Text Next;
     private string currentText;
     private int currentTextIndex;
+    private AudioSource audioSource;
 
     public string[] text = new string[] {
         "You are the regional district manager of the local evil horde. Your boss wants you to deal with some pesty little heroes by sending the troops in their direction. It is a simple desk job.",
@@ -29,6 +30,7 @@ public class DialogScript : MonoBehaviour {
         //Group = GetComponent<CanvasGroup>();
         //Group.alpha = 0;        
        
+        audioSource = GetComponent<AudioSource>();
         currentTextIndex = 0;
     }
 
@@ -58,12 +60,14 @@ public class DialogScript : MonoBehaviour {
     private IEnumerator DisplayText() {
         Text.text = "";
 
+        audioSource.Play();
         foreach (char c in currentText.ToCharArray()) {
             Text.text += c;
             yield return new WaitForSecondsRealtime(kMaxTextTime / TextSpeed);
         }
 
         if (Text.text == currentText) {
+            audioSource.Stop();
             StopAllCoroutines();
         }
         yield return null;
@@ -86,7 +90,7 @@ public class DialogScript : MonoBehaviour {
         }
         else
         {
-            pause = Text.text == currentText ? true : false;
+            pause = Text.text == currentText;
             showNext();
 
             if (pause && Input.GetMouseButtonDown(0))
@@ -109,49 +113,6 @@ public class DialogScript : MonoBehaviour {
                     StopAllCoroutines();
                     Text.text = currentText;
                 }
-            }
-            pause = Text.text == currentText ? true : false;
-            showNext();
-
-            if (pause && Input.GetMouseButtonDown(0))
-            {
-                pause = false;
-                currentTextIndex++;
-                if (currentTextIndex < text.Length)
-                {
-                    ReplaceText(text[currentTextIndex]);
-                }
-                else
-                {
-                    end = true;
-                }
-            }
-            else
-            {
-                if (Input.GetMouseButtonDown(0))
-                {
-                    StopAllCoroutines();
-                    Text.text = currentText;
-                }
-            }
-        }
-
-        pause = Text.text == currentText ? true : false;
-        showNext();
-
-        if (pause && Input.GetMouseButtonDown(0)) {
-            pause = false;
-            currentTextIndex++;
-            if (currentTextIndex < text.Length) {
-                ReplaceText(text[currentTextIndex]);
-            } else {
-                end = true;
-                
-            }
-        } else {
-            if (Input.GetMouseButtonDown(0)) {
-                StopAllCoroutines();
-                Text.text = currentText;
             }
         }
     }
