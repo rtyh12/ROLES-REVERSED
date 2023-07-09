@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
 
 public enum Team {
     hero,
@@ -79,7 +81,7 @@ public class HealthScript : MonoBehaviour {
             SceneMaster.enemyKilledCounter();
             Debug.Log(SceneMaster.killedEnemies);
         } else {
-            // game over, restart scene
+           SceneManagement.LoadScene(14);
         }
 
         Destroy(gameObject);

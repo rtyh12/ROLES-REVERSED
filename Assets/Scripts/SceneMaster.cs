@@ -70,9 +70,9 @@ public static class SceneMaster
         }
         else 
         {
-            for (int i = 0; i < fightTexts[levelCounter].Count;  i++)
+            for (int i = 0; i < fightTexts[levelCounter-1].Count;  i++)
             {
-                returnedText.Add(fightTexts[levelCounter][i]);
+                returnedText.Add(fightTexts[levelCounter-1][i]);
                 initiateEmailText = true;
             }
         }
