@@ -35,16 +35,6 @@ public class CubicleHamdler : MonoBehaviour
 
     }
 
-    void MoveScreen()
-    {
-        
-    }
-
-    void OpenMail()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
