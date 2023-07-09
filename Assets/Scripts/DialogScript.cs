@@ -7,8 +7,11 @@ public class DialogScript : MonoBehaviour
     //const string kAlphaCode = "<color=#00000000>";
     const float kMaxTextTime = 0.1f;
     public static int TextSpeed = 2;
+    private bool pause = false;
+    private bool end = false;
 
     public TMP_Text Text;
+    public TMP_Text Next;
     private string currentText; 
 
     private string firstText = "You are the regional district manager of the local evil horde. Your boss wants you to deal with some pesty little heroes by sending the troops in their direction. It is a simple desk job. ";
@@ -33,10 +36,8 @@ public class DialogScript : MonoBehaviour
    }
 
 
-   //idk if i need this but maybe?
    public void ReplaceText(string text)
    {    
-        StopAllCoroutines();
         Text.text = "";
         currentText = text;
         Show(text);
@@ -45,7 +46,7 @@ public class DialogScript : MonoBehaviour
     //didn't actually test this yet 
     public void Close()
     {
-        //Anim?.SetBool("Open", false);\
+    
         //Group.alpha = 0;
         currentText = "";
         StopAllCoroutines();
@@ -60,31 +61,48 @@ public class DialogScript : MonoBehaviour
         foreach(char c in currentText.ToCharArray())
         {   
             Text.text += c;
-
             yield return new WaitForSecondsRealtime(kMaxTextTime / TextSpeed);
+        }
+        
+        if (Text.text == currentText){
+            StopAllCoroutines();
         }
         yield return null;
     }
 
-    /*void Update()
+    private void showNext()
+    {
+        if (pause && !end) Next.text = ">>";
+        else Next.text = "";
+    }
+    
+
+    public void Update()
     {   
-        if (Input.GetMouseButtonDown(0))
-        {   
-            StopAllCoroutines();
-            Text.text = currentText;
-            yield return new WaitForSeconds(0.2f);
-            Debug.Log("Pressed left-click.");
-        }
-        if (Input.GetMouseButtonDown(1))
+        pause = Text.text == currentText? true: false;
+        showNext();
+
+
+        if(pause && Input.GetMouseButtonDown(0))
         {
-            Debug.Log("Pressed right-click.");
+            pause = false;
+            // continue text
+            if (Text.text == firstText){
+                ReplaceText(secondText);
+            } else if (Text.text == secondText){
+                ReplaceText(thirdText);
+            } else if (Text.text == thirdText){
+                end = true;
+            }
         }
-        //yield return new WaitForSeconds(0.2f);
-        
-        if (Text.text == firstText){
-            ReplaceText(secondText);
-        } else if (Text.text == secondText){
-            ReplaceText(thirdText);
+        else {
+            if (Input.GetMouseButtonDown(0))
+            {   
+                StopAllCoroutines();
+                Text.text = currentText;
+                Debug.Log("Pressed left-click.");
+            }            
         }
-    }*/
+        //*/
+    }
 }
