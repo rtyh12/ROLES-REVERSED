@@ -157,31 +157,31 @@ MonoBehaviour:
   - type: 0
     sprite: {fileID: 21300000, guid: 692e81e837fbe7b489fc7502b131acda, type: 3}
     prefab: {fileID: 1726483599145890019, guid: 826d06e8eca158140997835825931854, type: 3}
-    description: basic
+    description: Basic\nHP 50 | Attack 10
   - type: 1
     sprite: {fileID: 21300000, guid: ebd013d667078af429b7fc4950954562, type: 3}
     prefab: {fileID: 1726483599145890019, guid: 3ec4c52b1a385674894ad25a1093f237, type: 3}
-    description: strong
+    description: Stronger\nHP 200 | Attack 50
   - type: 2
     sprite: {fileID: 21300000, guid: 9f533d02b012dd64db131f7abc7fac49, type: 3}
     prefab: {fileID: 1726483599145890019, guid: 7268875130154f04991fb2ef2ad8e6d8, type: 3}
-    description: bonano
+    description: Banona\nHP 100 | Attack 5\nFood +100
   - type: 3
     sprite: {fileID: 21300000, guid: 3966340a99dde1d43b5526c35151dc00, type: 3}
     prefab: {fileID: 1726483599145890019, guid: 82576838a1bc2dd4cb63bae3c8c457f6, type: 3}
-    description: bonano
+    description: Doctor\nHP 200 | Attack -10
   - type: 4
     sprite: {fileID: 21300000, guid: 44d55c2a19703f243accb876bfaef191, type: 3}
     prefab: {fileID: 1726483599145890019, guid: 384374783bd09964bb3bc9e54845840f, type: 3}
-    description: dog
+    description: Dog\nHP 150 | Attack 8
   - type: 5
     sprite: {fileID: 21300000, guid: 9fbeb2a6a62355643a236b38fdcb4d50, type: 3}
     prefab: {fileID: 1726483599145890019, guid: b2f6c0cd18332d94a87add9c5e711d00, type: 3}
-    description: flower
+    description: Flowers\nHP 200 | Attack 75\nRomance +100
   - type: 6
     sprite: {fileID: 21300000, guid: 0aacd06cb3e94fd41b48c092e13f5218, type: 3}
     prefab: {fileID: 1726483599145890019, guid: 37fbaf3a6573b184493cebba2faa074e, type: 3}
-    description: duck
+    description: STRONKDUCK\nHP 200 | Attack 100
   - type: 7
     sprite: {fileID: 21300000, guid: e0f0c44d60a6cd442841b674510602a2, type: 3}
     prefab: {fileID: 0}
@@ -1177,6 +1177,54 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1149276720}
   m_CullTransparentMesh: 1
+--- !u!1 &1289617171
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1289617173}
+  - component: {fileID: 1289617172}
+  m_Layer: 0
+  m_Name: ObjectiveChecker
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1289617172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1289617171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8acd55476af2464c8fc85096ed26922, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectiveReached: 0
+  hero: {fileID: 4153268509036617052}
+  stateManager: {fileID: 8965687}
+  gameOverScreen: {fileID: 0}
+--- !u!4 &1289617173
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1289617171}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 565.16595, y: 216.63113, z: -5.753533}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1566167457
 GameObject:
   m_ObjectHideFlags: 0
@@ -2127,3 +2175,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b922cb7cdf196a74c95c533476221e24, type: 3}
+--- !u!1 &4153268509036617052 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4153268508285029569, guid: b922cb7cdf196a74c95c533476221e24, type: 3}
+  m_PrefabInstance: {fileID: 4153268509036617051}
+  m_PrefabAsset: {fileID: 0}
