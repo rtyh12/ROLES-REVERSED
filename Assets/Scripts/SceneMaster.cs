@@ -54,6 +54,7 @@ public static class SceneMaster
 
     public static List<string> getDialogue()
     {
+        initiateEmailText = false;
         List <string> returnedText = new List<string>();
         if (SceneManager.GetActiveScene().buildIndex == 1) 
         {
