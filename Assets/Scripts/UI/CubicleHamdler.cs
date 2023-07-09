@@ -123,6 +123,7 @@ public class CubicleHamdler : MonoBehaviour
                 }
                 else
                 {
+                    SceneMaster.firstCubicleScene = false;
                     SceneMaster.loadNextLevel();
 
                 }

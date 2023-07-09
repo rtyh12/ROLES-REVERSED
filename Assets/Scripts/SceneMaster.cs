@@ -54,12 +54,14 @@ public static class SceneMaster
 
     public static List<string> getDialogue()
     {
+        SceneMaster.textDone = false;
+        initiateEmailText = false;
         List <string> returnedText = new List<string>();
         if (SceneManager.GetActiveScene().buildIndex == 1) 
         {
-            for (int i = 0; i < cubicleTexts[levelCounter].Count;  i++)
+            for (int i = 0; i < cubicleTexts[levelCounter-1].Count;  i++)
             {
-                returnedText.Add(cubicleTexts[levelCounter][i]);
+                returnedText.Add(cubicleTexts[levelCounter-1][i]);
             }
 
         }
