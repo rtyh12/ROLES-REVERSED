@@ -123,7 +123,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _baseDamage: 0
   isHero: 1
-  attackCooldown: 1
+  attackCooldown: 0.25
 --- !u!61 &4153268508285029573
 BoxCollider2D:
   m_ObjectHideFlags: 0

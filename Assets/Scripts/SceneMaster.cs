@@ -10,7 +10,7 @@ public static class SceneMaster
     // HERO
     public static float heroAttackDamageInitial = 10;
     public static float heroMaxHungerInitial = 50;
-    public static float heroMaxHPInitial = 10;
+    public static float heroMaxHPInitial = 100;
     
     public static float heroAttackDamage = heroAttackDamageInitial;
     public static float heroMaxHunger = heroMaxHungerInitial;
