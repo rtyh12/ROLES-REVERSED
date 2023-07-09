@@ -146,6 +146,7 @@ public class DialogScript : MonoBehaviour {
                 ReplaceText(text[currentTextIndex]);
             } else {
                 end = true;
+                SceneMaster.textDone = true;
                 
             }
         } else {
