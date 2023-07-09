@@ -7,6 +7,6 @@ public class FlowerDeathEffect : MonoBehaviour, IDeathEffect {
     public float romanceDropped = 10;
     
     public void PerformOn(GameObject hero) {
-        hero.GetComponent<HeroScript>().romance += romanceDropped;
+        SceneMaster.heroRomance += romanceDropped;
     }
 }

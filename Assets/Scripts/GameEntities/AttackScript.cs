@@ -4,7 +4,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class AttackScript : MonoBehaviour {
-    public float baseDamage;
+    public float _baseDamage;
+    public float baseDamage {
+        get {
+            return isHero ? SceneMaster.heroAttackDamage : _baseDamage;
+        }
+    }
+    public bool isHero;
     private BoxCollider2D boxCollider;
 
     public float attackCooldown;
