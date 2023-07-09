@@ -22,7 +22,7 @@ public class HealthScript : MonoBehaviour {
     public float _maxHealth;
     public float maxHealth {
         get {
-            return isHero ? SceneMaster.heroMaxHP : _maxHealth;
+            return team == Team.hero ? SceneMaster.heroMaxHP : _maxHealth;
         }
     }
 

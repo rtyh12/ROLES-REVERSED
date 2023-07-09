@@ -39,7 +39,7 @@ public class HeroScript : MonoBehaviour {
             SceneMaster.heroMaxHP
         );
 
-        Debug.Log($"Level={level}, AttackDamage={SceneMaster.heroAttackDamage}, heroMaxHunger={SceneMaster.heroMaxHunger}, heroMaxHP={SceneMaster.heroMaxHunger}");
+        Debug.Log($"XP={xp}, Level={level}, AttackDamage={SceneMaster.heroAttackDamage}, heroMaxHunger={SceneMaster.heroMaxHunger}, heroMaxHP={SceneMaster.heroMaxHunger}");
     }
 
     void Start() {
