@@ -8,6 +8,7 @@ public enum Team {
 
 public class HealthScript : MonoBehaviour {
     private float _health;
+    public GameObject gameui;
 
     public float health {
         get { return _health; }
@@ -20,7 +21,8 @@ public class HealthScript : MonoBehaviour {
             UpdateHealthBar(_health);
             if(team == Team.hero){
                 SceneMaster.heroHP = _health;
-                
+                var bar = gameui = GameObject.Find("Gameui/");
+                // UIHealthBar.value = _health;
             }
         }
     }
@@ -64,7 +66,7 @@ public class HealthScript : MonoBehaviour {
     }
 
     void Start() { 
-
+        gameui = GameObject.Find("Gameui");
 
         healthBarCanvas = Instantiate(healthBarPrefab, transform.position, Quaternion.identity);
         healthBarCanvas.transform.SetParent(this.transform);
