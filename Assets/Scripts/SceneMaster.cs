@@ -42,13 +42,16 @@ public static class SceneMaster
         } ;
 
     public static List<List<string>> fightTexts = new List<List<string>>() { new List<string>() {"Oh dang, that threat looks pretty cute… *blush*","Kind of a shame to kill someone that good looking…","Maybe I can just scare them away without anyone getting hurt?" },
-        new List<string>() {"Oh no!","They are hurt!","They need a doctor!" },
-        new List<string>() {"Hmm, it seems like they are getting hungry…" },
+        new List<string>() {"Oh no!","They are hurt!","They need a doctor!","Hmm, also seems like they are getting hungry…"},
         new List<string>() {"Oh it looks like they got stronger!","Aren’t humans adorable?" },
+        new List<string>() {"Can't believe they are making me hurt this cutie" },
         new List<string>() {"Those dogs sure can’t wait to get into battle."},
+        new List<string>() {"If only I had a chance to tell them how I feel" },
         new List<string>() {"They might come here?","It would be nice to meet them in person…","*blushes*" },
-        new List<string>() {"Wait, do they think I’m flirting with them???","*blushes*" },
-        new List<string>() { "Guess I can choose my own objectives today…" }
+        new List<string>() {"Wait, do they think I’m flirting with them???","*blushes*","Guess I can choose my own objectives today…" },
+        new List<string>() {"I really hope they survive this"},
+        new List<string>() {"aaah getting close"  },
+        new List<string>() {"almost there" },
     }  ;
 
 
