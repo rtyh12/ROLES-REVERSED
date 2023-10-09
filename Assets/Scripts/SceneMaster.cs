@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public static class SceneMaster
 {
-    public static int levelCounter = 1;
+    public static int levelCounter = 0;
 
     // HERO
     public static float heroAttackDamageInitial = 10;
@@ -62,17 +62,17 @@ public static class SceneMaster
         List <string> returnedText = new List<string>();
         if (SceneManager.GetActiveScene().buildIndex == 1) 
         {
-            for (int i = 0; i < cubicleTexts[levelCounter-1].Count;  i++)
+            for (int i = 0; i < cubicleTexts[levelCounter].Count;  i++)
             {
-                returnedText.Add(cubicleTexts[levelCounter-1][i]);
+                returnedText.Add(cubicleTexts[levelCounter][i]);
             }
 
         }
         else 
         {
-            for (int i = 0; i < fightTexts[levelCounter-1].Count;  i++)
+            for (int i = 0; i < fightTexts[levelCounter].Count;  i++)
             {
-                returnedText.Add(fightTexts[levelCounter-1][i]);
+                returnedText.Add(fightTexts[levelCounter][i]);
                 initiateEmailText = true;
             }
         }
@@ -84,13 +84,12 @@ public static class SceneMaster
 
     public static void loadNextLevel()
     {
-        levelCounter++;
-        SceneManager.LoadScene(levelCounter);
+        SceneManager.LoadScene(levelCounter+2);
     }
 
     public static void loadCubicle()
     {
-        
+        levelCounter++;
         SceneManager.LoadScene(1);
     }
 
