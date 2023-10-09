@@ -7,7 +7,6 @@ public class GameOverLogic : MonoBehaviour
 {
 
     public void Retry() {
-        SceneMaster.levelCounter-=1;
         SceneMaster.loadNextLevel();
     }
     public void QuitGame() {
